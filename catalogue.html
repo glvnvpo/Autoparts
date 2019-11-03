@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Автозапчасти</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        #header {
+            width: 98%;
+            height: 150px;
+            position: fixed;
+            z-index: 9999;
+            background-color: black;
+            /*border: solid red;*/
+            border-radius: 50px;
+        }
+
+        #headerMain {
+            width: 98%;
+            height: 150px;
+            margin: 0px auto;
+            z-index: 0;
+        }
+
+        #menu_href {
+            font-family: Arial;
+            font: 18pt bold;
+        }
+
+        footer {
+            background-color: black;
+        }
+
+        @font-face { /*подключение стороннего шрифта*/
+            font-family: Roboto; /* Гарнитура шрифта */
+            src: url(roboto-black-italic.ttf); /* Путь к файлу со шрифтом */
+        }
+
+        p {
+            font-family: Roboto;
+            font-style: italic;
+            color: #2438d4;
+            font-size: 30pt;
+            letter-spacing: 7px;
+        }
+
+            p[id="p0"] {
+                padding-left: 25%;
+                font-size: 43pt;
+            }
+
+            p[id="p1"] {
+                padding-left: 35%;
+            }
+
+            p[id="p2"] {
+                padding-left: 40%;
+            }
+
+            p[id="p3"] {
+                padding-left: 45%;
+            }
+    </style>
+    <!--<script language="JavaScript" src='master_page.js'></script> подключение мастер-страницы-->
+</head>
+
+<body>
+
+    <div id="headerMain">
+
+        <table id="header" border="0">
+            <tr>
+                <td width="350" align="center"><a href="index.html"><img src="download.gif" width="330" /></a></td>
+                <td width="140"><a href="index.html" id="menu_href"><img src="главная.png" height="70" /></a></td>
+                <td width="140"><a id="menu_href"><img src="каталог.png" height="70" /></a></td>
+                <td width="140"><a id="menu_href"><img src="отзывы.png" height="70" /></a></td>
+                <td width="140"><a id="menu_href">Ещё что-то</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <button type="button"  onclick="location.href = 'http://localhost/Автозапчасти/catalogue.php'">Показать товары</button>
+
+    <footer>
+        <img src="logofooter.png" width="350" />
+        Разработала Голованова Полина
+        2019
+    </footer>
+</body>
+</html>

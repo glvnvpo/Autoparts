@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   
+
+    <style>
+
+        .principles {
+            margin-top: 50px;
+
+        }
+
+
+        .triangle {
+            border: 60px solid transparent;
+            border-top: 120px solid rgb(255, 68, 0);
+            display: block;
+            width: 50%;
+            height: 20px;;
+        }
+
+        .hr1 {
+            margin-top: 90px;
+            border: none; /* Убираем границу */
+            background-color: blue; /* Цвет линии */
+            color: blue; /* Цвет линии для IE6-7 */
+            height: 2px; /* Толщина линии */
+        }
+
+        .hr2 {
+            margin-top: 40px;
+            border: none; /* Убираем границу */
+            background-color: blue; /* Цвет линии */
+            color: blue; /* Цвет линии для IE6-7 */
+            height: 2px; /* Толщина линии */
+        }
+
+        .we {
+            font-family: Roboto;
+            color: #567FE4;
+            font-size: 20pt;
+            letter-spacing: 2px;
+            margin-top: 40px;
+        }
+
+        .feedback {
+            font-family: Roboto;
+            color: #2438d4;
+            font-size: 24pt;
+            letter-spacing: 2px;
+            margin-top: 20px;
+        }
+
+        .portrait {
+            border-radius: 100px;
+            width: 200px;
+        }
+
+        .feedback_table {
+            margin-top: 20px;
+            font-family: Arial;
+            color: #b4aaf2;
+            line-height: 1.5;
+            font-size: 14pt;
+        }
+
+        .feedback_text {
+            font-size: 15pt;
+        }
+
+        /*p[id="p-1"] {
+            padding-left: 5%;
+            font-size: 35pt;
+            letter-spacing: 2px;
+        }*/
+        p[id="p0"] {
+            padding-left: 25%;
+            font-size: 43pt;
+        }
+
+        p[id="p1"] {
+            padding-left: 35%;
+        }
+
+        p[id="p2"] {
+            padding-left: 40%;
+        }
+
+        p[id="p3"] {
+            padding-left: 45%;
+        }
+    </style>
+    <script>
+        //function delete_cookie (cookie_name) //функция для удаления куки
+        //    {
+        //      var cookie_date = new Date ( );  // Текущая дата и время
+        //      cookie_date.setTime ( cookie_date.getTime() - 1 );
+        //      document.cookie = cookie_name += "=; expires=" + cookie_date.toGMTString();
+        //};
+        //if ($.cookie("kind")) { //удаляем куки с фильтрами из каталога
+        //    delete_cookie("kind");
+        //};
+        //if ($.cookie("supplier")) { //удаляем куки с фильтрами из каталога
+        //    delete_cookie("supplier");
+        //};
+    </script>
+</head>
+<body>
+    <?php
+        if (isset($_COOKIE['kind']))   //удаляем куки с фильтрами из каталога
+        {
+        setcookie("kind", "", time() - 3600);
+        }
+
+        if (isset($_COOKIE['supplier']))   //удаляем куки с фильтрами из каталога
+        {
+        setcookie("supplier", "", time() - 3600);
+        }
+    ?>
+
+    <?php
+    include "master_page_header.php";
+    ?>
+
+
+    <div class="principles">
+        <!--<p style="display:inline" id="p-1">Добро пожаловать в интернет-магазин автозапчастей! </p> <br />-->
+        <p style="display:inline" id="p0">Наши принципы: </p> <br /> <p id="p1" style="display:inline">Низкие цены.</p> <br /> <p id="p2" style="display:inline">Отличное качество.</p> <br /><p id="p3" style="display:inline">Доставка в срок.</p>
+    </div>
+
+    <hr class="hr1" /> <!--горизонтальная линия-->
+    <div class="we">
+        <table width="98%">
+            <tr>
+                <td align="center">
+                    Более 25-ти лет на рынке автозапчастей.<br />
+                    Тысячи довольных клиентов.
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <hr class="hr2" /> <!--горизонтальная линия-->
+
+    <div class="feedback">
+        <table width="98%">
+            <tr>
+                <td align="center">
+                    Отзывы
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="feedback_table">
+        <table width="98%" border="0">
+            <tr>
+                <td width="33%" align="center"><img src="images/отзыв1.jpg" class="portrait" /></td>
+                <td width="33%" align="center"><img src="images/отзыв2.jpg" class="portrait" /></td>
+                <td width="32%" align="center"><img src="images/отзыв3.jpg" class="portrait" /></td>
+            </tr>
+            <tr>
+                <td align="center"><i>Сергей Безруков</i><br /><div class="feedback_text">Потрясающий сервис!</div></td>
+                <td align="center"><i>Джереми Кларксон</i><br /><div class="feedback_text">Я в восторге! Моя ласточка снова летает!</div></td>
+                <td align="center"><i>Анатолий Яковлев</i><br /><div class="feedback_text">Товаром остался полностью доволен. <br />Всем рекомендую этот магазин!</div></td>
+            </tr>
+        </table>
+    </div>
+    <hr class="hr2" /> <!--горизонтальная линия-->
+    <!--<img src="лиса.jpg" width="90%" />-->
+    <?php
+    include "master_page_footer.php";
+    ?>
+</body>
+</html>
+
+

@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        #authorization {
+            position: absolute;
+            padding-top: 60px;
+            left: 300px;
+        }
+
+        #registration {
+            position: absolute;
+            padding-top: 60px;
+            right: 300px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: -30px;
+        }
+
+        th {
+            font-family: Arial;
+            font-size: 25pt;
+            color: #2438d4;
+            height: 70px;
+        }
+
+        td {
+            font-family: Arial;
+            font-size: 15pt;
+            color: white;
+            height: 40px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 300px;
+        }
+
+        input[type="submit"] {
+            height: 30px;
+            font-family: Arial;
+            font-size: 15pt;
+            color: white;
+            border: solid 2px #2438d4;
+            background: none;
+            border-radius: 3px;
+        }
+
+            input[type="submit"]:hover {
+                box-shadow: 0 0 25px #2438d4;
+            }
+    </style>
+    <!--<script>
+        alert(localStorage.getItem('email_storage'));
+        if (localStorage.getItem('email_storage') !== null) {
+            document.getElementById("enter").src = "images/enter.png";
+        }
+        else if (localStorage.getItem('email_storage') == "empty")
+        {
+            document.getElementById("enter").src = "images/enter.png";
+        }
+        else {
+            document.getElementById("enter").src = "images/exit.png";
+        }
+
+
+    </script>-->
+
+</head>
+
+<body>
+
+    <?php
+    if (isset($_COOKIE['kind']))   //удаляем куки с фильтрами из каталога
+    {
+    setcookie("kind", "", time() - 3600);
+    }
+
+    if (isset($_COOKIE['supplier']))   //удаляем куки с фильтрами из каталога
+    {
+    setcookie("supplier", "", time() - 3600);
+    }
+    ?>
+
+    <?php
+    include "master_page_header.php";
+    ?>
+
+    <form id="authorization" action="authorization.php" method="POST">
+        <table border="0" style="border: solid white 2px;">
+            <tr>
+                <th colspan="2">Авторизация</th>
+            </tr>
+            <tr>
+                <td width="100" align="center">Email</td>
+                <td><input type="email" name="email_auth" id="email_auth" required /></td>
+            </tr>
+            <tr>
+                <td align="center">Пароль</td>
+                <td><input type="password" name="password_auth" required /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Войти" /></td>
+            </tr>
+        </table>
+        <div id="wrong_password"></div>
+    </form>
+
+    <form id="registration" action="registration.php" method="POST">
+        <table border="0" style="border: solid white 2px;">
+            <tr>
+                <th colspan="2">Регистрация</th>
+            </tr>
+            <tr>
+                <td align="center">E-mail</td>
+                <td><input type="email" name="email" required /></td>
+            </tr>
+            <tr>
+                <td align="center">ФИО</td>
+                <td><input type="text" name="fio" pattern="^[А-Яа-яЁё\s\-]+$" required /></td>
+            </tr>
+            <tr>
+                <td align="center" width="170">Адрес доставки</td>
+                <td><input type="text" name="address" required /></td>
+            </tr>
+
+            <tr>
+                <td align="center">Пароль</td>
+                <td><input type="password" name="password" minlength="3" required /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Зарегистрироваться" /></td>
+            </tr>
+        </table>
+    </form>
+
+    <?php
+    include "master_page_footer.php";
+    ?>
+
+</body>
+</html>
+
+
+
+
